@@ -1,0 +1,35 @@
+/// <reference path="../typings/whatwg-fetch" />
+/// <reference path="../typings/jwt" />
+/// <reference path="../typings/moment-timezone/moment-timezone" />
+
+export function status(response) {
+  if (response.status >= 200 && response.status < 300) {
+    return Promise.resolve(response);
+  } 
+
+  return response.text().then(function(text) {
+    return Promise.reject(text);
+  });
+}
+
+export function text(response) {
+  return response.text();
+}
+
+export function json(response) {
+  return response.json();
+}
+
+export function getUserProfile() {
+
+  var jwt = localStorage.getItem('jwt');
+
+  if (jwt) {
+    return window.jwt_decode(jwt);
+  } else {
+    return {
+      id: 0,
+      username: 'unknown'
+    };
+  }
+}

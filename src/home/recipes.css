@@ -1,0 +1,23 @@
+.centered-text {
+  text-align: center;
+}
+
+.title {
+  font-size: 300%;
+}
+
+@keyframes clicked-anm {
+  0% {font-size: 200%;}
+  30% {font-size: 280%;}
+  100%% {font-size: 200%;}
+}
+
+.click-anm {
+  animation-name: clicked-anm;
+  animation-duration: 800ms;
+}
+
+.new-recipe-icon {
+  font-size: 200%;
+  color: green;
+}

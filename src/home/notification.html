@@ -1,0 +1,7 @@
+<div class="container-fluid well well-sm center-block">
+  <span class="glyphicon notification-icon pull-left"
+        [ng-class]="getIconClass(model.notificationType)"
+        style="margin-right: 10px"></span>
+  <span class="notification-text"> {{ model.message }}</span>
+  <span class="notification-time pull-right">{{ model.time }}</span>
+</div>

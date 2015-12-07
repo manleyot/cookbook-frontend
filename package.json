@@ -1,0 +1,27 @@
+{
+  "name": "cookbook-frontend",
+  "version": "1.0.0",
+  "dependencies": {
+    "angular2": "2.0.0-alpha.44",
+    "bootstrap": "3.3.6",
+    "jquery": "2.1.4",
+    "jwt-decode": "^1.4.0",
+    "moment": "^2.10.6",
+    "moment-timezone": "^0.4.1",
+    "systemjs": "0.19.2",
+    "whatwg-fetch": "^0.10.1"
+  },
+  "devDependencies": {
+    "live-server": "^0.8.2",
+    "typescript": "^1.6.2"
+  },
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc -w",
+    "start": "live-server --open=."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

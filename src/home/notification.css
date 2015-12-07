@@ -1,0 +1,32 @@
+.notification-icon {
+  font-size: 200%;
+}
+
+.notification-text {
+  font-family: "Veranda";
+  font-size: 1.3em;
+}
+
+.notification-time {
+  color: gray;
+}
+
+.nt-user {
+  color: #337ab7;
+}
+
+.nt-add {
+  color: #5cb85c;
+}
+
+.nt-remove {
+  color: #d9534f;
+}
+
+.nt-meal {
+  color: #f0ad4e;
+}
+
+.nt-note {
+  color: gray;
+}

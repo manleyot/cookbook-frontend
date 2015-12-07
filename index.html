@@ -1,0 +1,39 @@
+<html>
+
+  <head>
+    <title>Cookbook</title>
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="node_modules/systemjs/dist/system.src.js"></script>
+    <script type="text/javascript" src="/node_modules/whatwg-fetch/fetch.js"></script>
+    <script type="text/javascript" src="node_modules/jwt-decode/build/jwt-decode.js"></script>
+    <script type="text/javascript" src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script type="text/javascript" src="node_modules/angular2/bundles/router.dev.js"></script>
+    <script type="text/javascript" src="node_modules/angular2/bundles/http.dev.js"></script>
+    <script>
+      System.config({
+        packages: {
+          'src': {defaultExtension: 'js'},
+          'app': {defaultExtension: 'js'},
+          'home': {defaultExtension: 'js'},
+          'login': {defaultExtension: 'js'},
+          'signup': {defaultExtension: 'js'}
+        }
+      });
+      System.import('src/bootstrap');
+    </script>
+
+  </head>
+  <body>
+
+    <cookbook-app>
+      loading...
+    </cookbook-app>
+
+  </body>
+
+</html>

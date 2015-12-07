@@ -1,0 +1,80 @@
+<div class="panel panel-success center-block new-recipe-panel">
+
+  <div class="panel-heading">
+   Create New Recipe
+  </div>
+
+  <div class="panel-body">
+    <form>
+
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control new-item" id="name" placeholder="New Recipe"
+               [(ng-model)]="recipe.name">
+      </div>
+
+
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea class="form-control new-item" rows="4" id="description" placeholder="description..." 
+                  [(ng-model)]="recipe.description"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="ingredients">Ingredients:</label>
+
+        <div class="list-group list-editor">
+          <div class="list-group-item new-item" *ng-for="#i of recipe.ingredients">
+            <span #ing>{{ i }}</span>
+            <span class="glyphicon glyphicon-remove-sign pull-right remove-btn"
+                  (click)="removeIngredient($event, ing)"></span>
+          </div>
+
+          <div class="list-group-item">
+            <div class="form-inline">
+              <div class="form-group" style="width: 100%;">
+                <input type="text" class="form-control" id="newIngredient" placeholder="New Ingredient" style="width: 80%;">
+                <button class="btn btn-default btn-primary"
+                        (click)="addIngredient($event)"
+                        style="width: 18%;">
+                  Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="directions">Directions:</label>
+
+        <div class="list-group list-editor">
+          <div class="list-group-item new-item" *ng-for="#d of recipe.steps">
+            <span #direction>{{ d }}</span>
+            <span class="glyphicon glyphicon-remove-sign pull-right remove-btn"
+                  (click)="removeDirection($event, direction)"></span>
+          </div>
+
+          <div class="list-group-item">
+            <div class="form-inline">
+              <div class="form-group" style="width: 100%;">
+                <input type="text" class="form-control" id="newDirection" placeholder="Next Step"  style="width: 80%;">
+                <button class="btn btn-default btn-primary"
+                        (click)="addDirection($event)"
+                        style="width: 18%;">
+                  Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-default btn-success pull-right"
+                            style="margin-left: 10px;"
+              (click)="onSubmitClicked($event)">Submit</button>
+      <button type="submit" class="btn btn-default btn-danger pull-right"
+              (click)="onCancelClicked($event)">Cancel</button>
+
+    </form>
+  </div>
+
+</div>

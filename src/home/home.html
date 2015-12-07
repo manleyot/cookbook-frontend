@@ -1,0 +1,34 @@
+<div class="fluid-container home-container">
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" style="font-size:200%">Cookbook</a>
+      </div>
+      <div>
+        <ul class="nav navbar-nav">
+          <li         (click)="selectedView = 'Dashboard'"
+              [class.active]="selectedView == 'Dashboard'">
+                                            <a>Dashboard</a></li>
+          <li         (click)="selectedView = 'Recipes'"
+              [class.active]="selectedView == 'Recipes'">
+                                            <a>Recipes</a></li>
+        </ul>
+      </div>
+
+      <div class="pull-right">
+        <span style="color: lightgray;">{{ username }}</span>
+        <button type="button" class="btn btn-default navbar-btn btn-sm"
+                (click)="signOut()">Sign Out</button>
+      </div>
+
+    </div>
+  </nav>
+
+  <span [ng-switch]="selectedView">
+    <template [ng-switch-when]="'Dashboard'"><dashboard></dashboard></template>
+    <template [ng-switch-when]="'Recipes'"><recipes></recipes></template>
+    <template ng-switch-default>ERROR: unknown view "{{selectedValue}}"</template>
+  </span>
+
+</div>

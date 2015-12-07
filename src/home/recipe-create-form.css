@@ -1,0 +1,19 @@
+.new-recipe-panel {
+  max-width: 600px;
+  min-width: 100px;
+}
+
+.list-editor {
+  width: 100%;
+  max-width: 600px;
+  min-width: 100px;
+}
+
+.remove-btn {
+  font-size: 130%;
+  color: #D9534F;
+}
+
+.new-item {
+  background-color: whitesmoke;
+}

@@ -1,0 +1,32 @@
+<div class="container">
+
+  <div class="container page-header" style="width: 95%;">
+    <span class="title">Recipes</span>
+    <span class="glyphicon glyphicon-plus-sign new-recipe-icon"
+          (click)="onNewRecipe($event)">
+    </span>
+  </div>
+
+  <div style="width: 98%;">
+
+    <div *ng-if="showNewRecipeForm">
+      <recipe-create-form
+        (canceled)="showNewRecipeForm = false"
+        (created)="onRecipeCreated($event)">
+      </recipe-create-form>
+    </div>
+
+    <nav *ng-if="enableNext || enablePrev">
+        <ul class="pager">
+          <li [ng-class]="getPagerClass(enablePrev)"><a (click)="previousPage()">Previous</a></li>
+          <li [ng-class]="getPagerClass(enableNext)"><a (click)="nextPage()">Next</a></li>
+        </ul>
+    </nav>
+
+    <recipe-card *ng-for="#r of recipeList" [model]="r"
+                 (deleted)="updateRecipeList()"></recipe-card>
+
+  </div>
+
+
+</div>

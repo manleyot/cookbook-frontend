@@ -1,0 +1,23 @@
+<div class="container">
+
+  <div class="container page-header" style="width: 95%;">
+    <span class="title">Recent Activity</span>
+  </div>
+
+  <div style="width: 98%;">
+
+    <notification *ng-for="#n of notificationList" [model]="n"></notification>
+
+    <nav *ng-if="enableNext || enablePrev">
+        <ul class="pager">
+          <li class="previous" [ng-class]="getPagerClass(enablePrev)"><a (click)="previousPage()">
+              <span aria-hidden="true">&larr;</span> Newer</a></li>
+          <li class="next"     [ng-class]="getPagerClass(enableNext)"><a (click)="nextPage()">
+              Older <span aria-hidden="true">&rarr;</span></a></li>
+        </ul>
+    </nav>
+
+  </div>
+
+
+</div>
