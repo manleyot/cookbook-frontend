@@ -1,6 +1,5 @@
 /// <reference path="../typings/whatwg-fetch" />
 /// <reference path="../typings/jwt" />
-/// <reference path="../typings/moment-timezone/moment-timezone" />
 
 export function status(response) {
   if (response.status >= 200 && response.status < 300) {
